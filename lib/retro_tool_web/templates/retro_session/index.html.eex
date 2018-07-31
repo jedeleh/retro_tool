@@ -1,0 +1,26 @@
+<h2>Listing Retro sessions</h2>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Name</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for retro_session <- @retro_sessions do %>
+    <tr>
+      <td><%= retro_session.name %></td>
+
+      <td class="text-right">
+        <span><%= link "Show", to: retro_session_path(@conn, :show, retro_session), class: "btn btn-default btn-xs" %></span>
+        <span><%= link "Edit", to: retro_session_path(@conn, :edit, retro_session), class: "btn btn-default btn-xs" %></span>
+        <span><%= link "Delete", to: retro_session_path(@conn, :delete, retro_session), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs" %></span>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<span><%= link "New Retro session", to: retro_session_path(@conn, :new) %></span>

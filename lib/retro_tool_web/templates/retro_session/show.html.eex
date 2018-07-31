@@ -1,0 +1,21 @@
+<h2>Show Retro session</h2>
+
+<ul>
+
+  <li>
+    <strong>Name:</strong>
+    <%= @retro_session.name %>
+  </li>
+
+  <%# three lists of messages, good, bad, questions %>
+
+  <%#= for message <- RetroTool.Retrospective.list_messages("good", @retro_session.id) do %>
+  <%= for message <- [1, 2, 3, 4, 5] do %>
+    <%= message %>
+
+  <% end %>
+
+</ul>
+
+<span><%= link "Edit", to: retro_session_path(@conn, :edit, @retro_session) %></span>
+<span><%= link "Back", to: retro_session_path(@conn, :index) %></span>

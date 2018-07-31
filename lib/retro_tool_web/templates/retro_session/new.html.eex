@@ -1,0 +1,5 @@
+<h2>New Retro session</h2>
+
+<%= render "form.html", Map.put(assigns, :action, retro_session_path(@conn, :create)) %>
+
+<span><%= link "Back", to: retro_session_path(@conn, :index) %></span>
