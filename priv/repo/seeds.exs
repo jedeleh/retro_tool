@@ -34,7 +34,8 @@ Enum.each((1..10), fn(n) ->
     %Message{},
     %{
       content: "#{n} content",
-      message_type: message_type
+      message_type: message_type,
+      retro_session_id: retro_record.id
     }
   )
   |> Repo.insert!()

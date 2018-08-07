@@ -27,6 +27,7 @@ defmodule RetroToolWeb.RetroSessionController do
 
   def show(conn, %{"id" => id}) do
     retro_session = Retrospective.get_retro_session!(id)
+
     render(conn, "show.html", retro_session: retro_session)
   end
 

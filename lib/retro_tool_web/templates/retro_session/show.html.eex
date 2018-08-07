@@ -2,7 +2,7 @@
 
   <div>
     <strong>Name:</strong>
-    <%= @retro_session.name %>
+    <%= List.first(@retro_session.messages) %>
   </div>
 
   <div class="column-container">

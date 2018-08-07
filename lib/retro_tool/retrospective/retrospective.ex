@@ -138,8 +138,17 @@ defmodule RetroTool.Retrospective do
       ** (Ecto.NoResultsError)
 
   """
-  def get_retro_session!(id), do: Repo.get!(RetroSession, id)
+  # def get_retro_session!(id), do: Repo.get!(RetroSession, id)
 
+  def get_retro_session!(id) do
+    import Ecto.Query
+    from(
+      rs in RetroTool.Retrospective.RetroSession,
+      where: rs.id == 1,
+      preload: [:messages],
+      select: rs
+    )|> RetroTool.Repo.one()
+  end
   @doc """
   Creates a retro_session.
 
