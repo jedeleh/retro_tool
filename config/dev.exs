@@ -51,8 +51,8 @@ config :phoenix, :stacktrace_depth, 20
 # Configure your database
 config :retro_tool, RetroTool.Repo,
   adapter: Ecto.Adapters.Postgres,
-  username: "ncsadb_user",
-  password: "",
+  username: "lbresnahan",
+  password: "postgres",
   database: "retro_tool_dev",
   hostname: "localhost",
   pool_size: 10

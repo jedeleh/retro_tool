@@ -1,11 +1,21 @@
 <h2>Show Retro session</h2>
 
-<ul>
-
-  <li>
+  <div>
     <strong>Name:</strong>
     <%= @retro_session.name %>
-  </li>
+  </div>
+
+  <div class="column-container">
+    <div class="columns" id="smiley">
+      Smiley
+    </div>
+    <div class="columns" id="confused">
+      Confused
+    </div>
+    <div class="columns" id="frowney">
+      Frowney
+    </div>
+  </div>
 
   <%# three lists of messages, good, bad, questions %>
 
@@ -14,8 +24,6 @@
     <%= message %>
 
   <% end %>
-
-</ul>
 
 <span><%= link "Edit", to: retro_session_path(@conn, :edit, @retro_session) %></span>
 <span><%= link "Back", to: retro_session_path(@conn, :index) %></span>
