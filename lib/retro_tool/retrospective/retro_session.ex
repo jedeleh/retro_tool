@@ -10,6 +10,10 @@ defmodule RetroTool.Retrospective.RetroSession do
     timestamps()
   end
 
-  @doc false
 
+  def changeset(retro_session, attrs) do
+    retro_session
+    |> cast(attrs, [:name])
+    |> validate_required([:name])
+  end
 end
