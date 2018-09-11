@@ -20,3 +20,9 @@ Ready to run in production? Please [check our deployment guides](http://www.phoe
   * Docs: https://hexdocs.pm/phoenix
   * Mailing list: http://groups.google.com/group/phoenix-talk
   * Source: https://github.com/phoenixframework/phoenix
+
+## CI
+
+  * Using Travis:  https://travis-ci.com/jedeleh/retro_tool
+  * requires a valid .travis.yml in the root directory (checked in already)
+  * This will execute tests on Travis upon creation or update of a PR
