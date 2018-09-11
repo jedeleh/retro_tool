@@ -14,7 +14,7 @@ defmodule RetroTool.Retrospective.Message do
   @doc false
   def changeset(message, attrs) do
     message
-    |> cast(attrs, [:content, :message_type])
+    |> cast(attrs, [:content, :message_type, :retro_session_id])
     |> validate_required([:content, :message_type])
     |> foreign_key_constraint(:retro_session_id)
   end

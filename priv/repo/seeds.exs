@@ -13,7 +13,7 @@ alias RetroTool.Retrospective.RetroSession, as: Retro
 alias RetroTool.Retrospective.Message
 alias RetroTool.Repo
 
-{:ok, retro_record} = Retro.changeset(
+{:ok, retro_session} = Retro.changeset(
   %Retro{},
   %{
     name: "First Session"
@@ -30,15 +30,19 @@ Enum.each((1..10), fn(n) ->
     2 -> "Frowney"
   end
 
-  Message.changeset(
+  IO.inspect retro_session.id
+
+  {:ok, message} = Message.changeset(
     %Message{},
     %{
       content: "#{n} content",
       message_type: message_type,
-      retro_session_id: retro_record.id
+      retro_session_id: retro_session.id
     }
   )
-  |> Repo.insert!()
+  |> IO.inspect()
+  |> Repo.insert()
+  |> IO.inspect()
 end)
 
 

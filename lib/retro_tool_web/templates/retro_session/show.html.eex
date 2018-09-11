@@ -2,7 +2,7 @@
 
   <div>
     <strong>Name:</strong>
-    <%= List.first(@retro_session.messages) %>
+    <%= List.first(@retro_session.messages).content %>
   </div>
 
   <div class="column-container">
@@ -20,10 +20,10 @@
   <%# three lists of messages, good, bad, questions %>
 
   <%#= for message <- RetroTool.Retrospective.list_messages("good", @retro_session.id) do %>
-  <%= for message <- [1, 2, 3, 4, 5] do %>
-    <%= message %>
+  <%= Enum.each( @retro_session.messages, fn(message) -> %>
+    <%= message.content %>
 
-  <% end %>
+  <% end) %>
 
 <span><%= link "Edit", to: retro_session_path(@conn, :edit, @retro_session) %></span>
 <span><%= link "Back", to: retro_session_path(@conn, :index) %></span>
