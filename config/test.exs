@@ -12,7 +12,7 @@ config :logger, level: :warn
 # Configure your database
 config :retro_tool, RetroTool.Repo,
   adapter: Ecto.Adapters.Postgres,
-  username: "ncsadb_user",
+  username: "lbresnahan",
   password: "",
   database: "retro_tool_test",
   hostname: "localhost",
