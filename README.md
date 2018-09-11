@@ -2,6 +2,8 @@
 
 To start your Phoenix server:
 
+  * Create config/dev.exs and paste contents of config/dev.example.exs into that
+  * Change username near the bottom of config/dev.exs to your own
   * Install dependencies with `mix deps.get`
   * Create and migrate your database with `mix ecto.create && mix ecto.migrate`
   * Install Node.js dependencies with `cd assets && npm install`
